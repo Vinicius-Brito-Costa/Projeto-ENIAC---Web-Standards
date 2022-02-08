@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Web Standards</title>
+    <script>
+        const TEXT_REGEX = "[<>@\/\\*{}()#;]";
+        function textValidate(text, maxLength) {
+            if(text === undefined){
+                return {
+                    isOk: false,
+                    message: "Text is undefined"
+                }
+            }
+            if(text.length <= 0 || text.length > maxLength){
+                return {
+                    isOk: false,
+                    message: "Text must have at least " + maxLength + " characters"
+                }
+            }
+            if(text)
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome">
+        <label for="email">E-mail</label>
+        <input type="e-mail" id="email">
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem"></textarea>
+        <button type="button">Cadastrar</button>
+    </form>
+</body>
+</html>
