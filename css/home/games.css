@@ -1,0 +1,30 @@
+.games{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+}
+.games mark{
+    position: absolute;
+    z-index: 1;
+    text-align: center;
+    text-transform: uppercase;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(10px, 8vw,50px);
+}
+#games-container{
+    display: block;
+    overflow: hidden;
+    position: relative;
+    opacity: 50%;
+}
+.games img{
+    position: absolute;
+    transition: all 10s linear;
+    width: 350px;
+    height: 507px;
+}

@@ -4,29 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/banner.css">
-    <link rel="stylesheet" href="css/callback.css">
-    <link rel="stylesheet" href="css/controller.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/home/banner.css">
+    <link rel="stylesheet" href="css/home/callback.css">
+    <link rel="stylesheet" href="css/home/controller.css">
+    <link rel="stylesheet" href="css/home/games.css">
     
     <title>TecToy - Mega Drive</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-        *{
-            font-family: 'Roboto';
-            font-weight: 300;
-            box-sizing: border-box;
-        }
-        body{
-            background-color: black;
-            color: white;
-            padding: 0;
-            margin: 0;
-        }
-    </style>
     <link rel="stylesheet" href="css/mark.css">
+    
 </head>
 <body>
     <header class="main-menu">
@@ -50,7 +38,7 @@
     <main>
         <section class="banner">
             <h4>Experimente todo o poder do</h4>
-            <mark><q>BLAST PROCESSING</q></mark>
+            <mark><q>BLAST&nbsp;PROCESSING</q></mark>
             <img src="images/mega.png" alt="Mega Drive" />
             <div class="grid-container">
                 <div class="grid"></div>
@@ -63,11 +51,18 @@
             <div>
                 <img src="images/controle.png" alt="Controle Mega Drive" />
             </div>
-            <p>Reviva o controle que mudou o jogo e leve-o para o próximo nível com o controle original oficialmente licenciado pela SEGA Genesis®. Com um cabo longo de 3 metros e compatibilidade com os consoles originais.</p> 
+            <p>Reviva o controle que mudou o jogo e leve-o para o <mark>próximo nível</mark> com o controle original oficialmente licenciado pela SEGA Genesis®. Com um cabo longo de 3 metros e compatibilidade com os consoles originais.</p> 
         </section>
         <section class="games">
-            <!-- TODO: JS que carrega todas as imagens de um folder
-            E faz scroll da direita para a esquerda-->
+            <mark>A melhor biblioteca de jogos da atualidade</mark>
+            <div id="games-container"></div>
+        </section>
+        <section class="mail-list">
+            <form>
+                <input type="text">
+                <input type="email">
+                <input type="submit">
+            </form>
         </section>
     </main>
     <footer class="footer">
@@ -78,5 +73,10 @@
         </ul>
         <span>Tec Toy S.A CNPJ: 22.770.366/0008-59, Rua Fernando de Albuquerque, 155 - 6o. Andar CEP: 01309-030 - São Paulo - SP Telefone: (11) 3018-8080</span>
     </footer>
+
+    <script type="module">
+        import { carousel } from "./js/gamesCarousel.js";
+        carousel(1);
+    </script>
 </body>
 </html>
