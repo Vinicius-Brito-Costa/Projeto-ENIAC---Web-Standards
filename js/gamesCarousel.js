@@ -7,7 +7,9 @@ function loadImages() {
     
     for (let i = 0; i < 10; i++){
         let img = document.createElement("img");
-        img.src = "images/covers/" + images.imgs[randomNumber(min, max)]
+        let imgName = images.imgs[randomNumber(min, max)]
+        img.src = "images/covers/" + imgName
+        img.alt = imgName
         let container = document.getElementById("games-container")
         img.style.left = (i * 350) + "px"
         imgs = [...imgs, img]

@@ -15,8 +15,7 @@
     display: block;
     object-fit: contain;
     margin: auto;
-    max-width: 600px;
-    width: 100%;
+    width: clamp(100px, 100%, 600px);
 }
 .banner mark{
     font-size: clamp(10px, 8vw,70px);

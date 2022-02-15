@@ -41,4 +41,5 @@
 }
 .logo img{
     object-fit: contain;
+    height: clamp(10px, 100%, 80px);
 }
