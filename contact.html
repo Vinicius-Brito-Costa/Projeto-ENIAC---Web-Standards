@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/form-base.css">
+    <link rel="stylesheet" href="css/contact/contact.css">
+    <link rel="icon" href="images/icon.webp">
+    <title>TecToy - Fale Conosco</title>
+    <script>
+        const TEXT_REGEX = "[<>@\/\\*{}()#;]";
+        function textValidate(text, maxLength) {
+            if(text === undefined){
+                return {
+                    isOk: false,
+                    message: "Text is undefined"
+                }
+            }
+            if(text.length <= 0 || text.length > maxLength){
+                return {
+                    isOk: false,
+                    message: "Text must have at least " + maxLength + " characters"
+                }
+            }
+            if(text)
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <header class="main-menu">
+        <nav>
+            <a href="index.html" alt="Home" class="logo">
+                <img src="images/logo.webp" alt="Logo" />
+            </a>
+            <ul>
+                <li>
+                    <a href="index.html" alt="Home">Home</a>
+                </li>
+                <li>
+                    <a href="about.html" alt="Sobre">Sobre a TecToy</a>
+                </li>
+                <li>
+                    <a href="contact.html" alt="Fale conosco">Fale conosco</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="form-container">
+            <h1>Fale Conosco:</h1>
+            <sub>Preencha o formulario abaixo para entrarmos em contato.</sub>
+            <form class="form">
+                <label class="label" for="nome">Nome</label>
+                <input class="input" type="text" id="nome" placeholder="Nome" required>
+                <label class="label" for="email">E-mail</label>
+                <input class="input" type="e-mail" id="email" placeholder="E-mail" pattern="[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}" required>
+                <label class="label" for="mensagem">Mensagem</label>
+                <textarea class="textarea" id="mensagem" placeholder="Mensagem" required></textarea>
+                <button class="button" type="submit">Enviar</button>
+            </form>
+        </section>
+        <section class="form-image">
+            <img src="images/contact.webp" alt="Toe Jam and Earl" />
+        </section>
+    </main>
+    <footer class="footer">
+        <ul>
+            <li>A logomarca Tectoy é marca registrada da Tec Toy S.A. Todos os direitos reservados.</li>
+            <li>Preços e condições de pagamento válidos exclusivamente para compras efetuadas no site, podendo diferenciar-se em outras redes ou lojas físicas.</li>
+            <li>As imagens dos produtos são meramente ilustrativas. Todos os preços e condições comerciais estão sujeitos à alteração sem aviso prévio.</li>
+        </ul>
+        <span>Tec Toy S.A CNPJ: 22.770.366/0008-59, Rua Fernando de Albuquerque, 155 - 6o. Andar CEP: 01309-030 - São Paulo - SP Telefone: (11) 3018-8080</span>
+    </footer>
+</body>
+</html>

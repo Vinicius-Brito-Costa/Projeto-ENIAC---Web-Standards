@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="css/default.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/form-base.css">
     <link rel="stylesheet" href="css/home/banner.css">
     <link rel="stylesheet" href="css/home/callback.css">
     <link rel="stylesheet" href="css/home/controller.css">
     <link rel="stylesheet" href="css/home/games.css">
+    <link rel="stylesheet" href="css/home/mail-list.css">
     
+    <link rel="icon" href="images/icon.webp">
     <title>TecToy - Mega Drive</title>
     <link rel="stylesheet" href="css/mark.css">
     
@@ -20,17 +23,17 @@
     <header class="main-menu">
         <nav>
             <a href="index.html" alt="Home" class="logo">
-                <img src="images/logo.png" alt="Logo" />
+                <img src="images/logo.webp" alt="Logo" />
             </a>
             <ul>
                 <li>
                     <a href="index.html" alt="Home">Home</a>
                 </li>
                 <li>
-                    <a href="" alt="Sobre">Sobre a TecToy</a>
+                    <a href="about.html" alt="Sobre">Sobre a TecToy</a>
                 </li>
                 <li>
-                    <a href="formulario.html" alt="Fale conosco">Fale conosco</a>
+                    <a href="contact.html" alt="Fale conosco">Fale conosco</a>
                 </li>
             </ul>
         </nav>
@@ -39,7 +42,7 @@
         <section class="banner">
             <h4>Experimente todo o poder do</h4>
             <mark><q>BLAST&nbsp;PROCESSING</q></mark>
-            <img src="images/mega.png" alt="Mega Drive" />
+            <img src="images/mega.webp" alt="Mega Drive" />
             <div class="grid-container">
                 <div class="grid"></div>
             </div>
@@ -49,7 +52,7 @@
         </section>
         <section class="controller">
             <div>
-                <img src="images/controle.png" alt="Controle Mega Drive" />
+                <img src="images/controle.webp" alt="Controle Mega Drive" />
             </div>
             <p>Reviva o controle que mudou o jogo e leve-o para o <mark>próximo nível</mark> com o controle original oficialmente licenciado pela SEGA Genesis®. Com um cabo longo de 3 metros e compatibilidade com os consoles originais.</p> 
         </section>
@@ -58,11 +61,13 @@
             <div id="games-container"></div>
         </section>
         <section class="mail-list">
-            <form>
-                <input type="text">
-                <input type="email">
-                <input type="submit">
+            <h1>Quer ficar por dentro das novidades?</h1>
+            <sub>Assine já nossa newsletter</sub>
+            <form class="form">
+                <input class="input" type="email" id="email" placeholder="E-mail" pattern="[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}"required>
+                <button class="button" type="submit">ASSINAR</button>
             </form>
+            <sub class="hidden-text">Prometemos não enviar spam, isso é coisa da Nintendo...</sub>
         </section>
     </main>
     <footer class="footer">

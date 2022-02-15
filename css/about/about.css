@@ -1,0 +1,21 @@
+main{
+    margin: 40px 20px;
+}
+.about span{
+    margin: 10px 0px;
+    display: block;
+    text-align: justify;
+}
+.about h2{
+    text-align: center;
+}
+.about i{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.yt-video{
+    border: none;
+    width: 100%;
+    height: clamp(200px, 40vw, 1080px);
+}
