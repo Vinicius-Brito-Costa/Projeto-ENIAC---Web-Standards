@@ -4,11 +4,12 @@
     align-items: center;
     justify-content: center;
     border: solid 1px white;
-    padding: 20px 0;
+    padding: 20px 10px;
     margin: 100px auto 50px;
-    width: clamp(150px, 100%, 600px);
+    width: clamp(150px, 95%, 600px);
 }
 .mail-list h1{
+    font-size: clamp(15px, 100%, 30px);
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -18,4 +19,7 @@
 .mail-list form{
     margin-top: 20px;
     margin-bottom: 5px;
+}
+#form-response{
+    height: 35px;
 }

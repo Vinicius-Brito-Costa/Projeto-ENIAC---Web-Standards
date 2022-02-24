@@ -18,6 +18,7 @@
     <link rel="icon" href="images/icon.webp">
     <title>TecToy - Mega Drive</title>
     <link rel="stylesheet" href="css/mark.css">
+    
 </head>
 <body>
     <header class="main-menu">
@@ -63,9 +64,10 @@
         <section class="mail-list">
             <h1>Quer saber quando o console vai lançar?</h1>
             <sub>Assine já nossa newsletter</sub>
-            <form class="form">
-                <input class="input" type="email" id="email" placeholder="E-mail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"required>
-                <button class="button" type="submit">ASSINAR</button>
+            <form class="form" onsubmit="return false">
+                <input class="input" type="email" id="email" name="email" placeholder="E-mail" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+                <input id="submit" class="button" type="submit" value="ASSINAR">
+                <div id="form-response"><span class="response-text"></span></div>
             </form>
             <sub class="hidden-text">Prometemos não enviar spam, isso é coisa da Nintendo...</sub>
         </section>
@@ -82,6 +84,10 @@
     <script type="module">
         import { carousel } from "./js/gamesCarousel.js";
         carousel(1);
+    </script>
+    <script type="module">
+        import cadastrarEmail from "./js/newsletter.js";
+        document.getElementsByClassName("form")[0].addEventListener("submit", (event) => cadastrarEmail(event), false)
     </script>
 </body>
 </html>

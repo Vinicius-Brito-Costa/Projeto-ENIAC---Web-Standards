@@ -1,8 +1,10 @@
 .form{
+    position: relative;
     display: flex;
     font-size: 30px;
     width: clamp(100px, 100%, 400px);
     min-height: 35px;
+    overflow: hidden;
 }
 .input {
     width: 100%;
@@ -57,4 +59,19 @@
 .label{
     margin: 5px 0;
     color: rgba(255, 255, 255, 0.788);
+}
+#form-response{
+    position: absolute;
+    left: 0; 
+    right: 0;
+    top: 35px;
+    width: 75.5%;
+    font-size: clamp(10px, 100%, 15px);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    transition: all .5s linear;
+}
+.response-text{
+    margin: auto;
 }
