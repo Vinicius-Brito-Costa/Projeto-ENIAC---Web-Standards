@@ -42,10 +42,11 @@ public class ContactController {
 
     @PostMapping
     @CrossOrigin
-    public ResponseEntity addContact(@RequestBody(required = true) ContactDao newContact) {
+    public ResponseEntity<DefaultResponse> addContact(@RequestBody(required = true) ContactDao newContact) {
         if(ContactValidator.validateContact(newContact)){
-            return ResponseEntity.ok().body(contactRepository.saveAndFlush(
-                    new Contact(newContact, emailService.addEmail(emailRepository, newContact.getEmail()))));
+            contactRepository.saveAndFlush(
+                    new Contact(newContact, emailService.addEmail(emailRepository, newContact.getEmail())));
+            return ResponseEntity.ok().body(new DefaultResponse(0, "Sua mensagem foi adicionada com sucesso."));
         }
         return ResponseEntity.badRequest().body(new DefaultResponse(1, "Contato inválido."));
     }

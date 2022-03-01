@@ -1,7 +1,7 @@
 import formResponsePopUp from "./formResponsePopUp.js";
 
 const emailAddUrl = "http://localhost:8080/email"
-export default function cadastrarEmail(event){
+export default async function cadastrarEmail(event){
     event.preventDefault();
     let form = new FormData(event.target);
     let request = {
@@ -14,8 +14,12 @@ export default function cadastrarEmail(event){
             "Content-Type": "application/json"
         }
     }
-    fetch(emailAddUrl, options).then(res => res.json()
-    .then(res => {
-        formResponsePopUp(res);
+    await fetch(emailAddUrl, options).then(res => res.json()
+        .then(res => {
+        res.options = {
+            topStart: "0px",
+            topEnd: "35px"
+        }
+        await formResponsePopUp(res);
     }));
 }

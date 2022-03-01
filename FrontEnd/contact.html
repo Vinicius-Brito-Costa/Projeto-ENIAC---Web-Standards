@@ -11,29 +11,6 @@
     <link rel="stylesheet" href="css/contact/contact.css">
     <link rel="icon" href="images/icon.webp">
     <title>TecToy - Fale Conosco</title>
-    <script>
-        const contactAddUrl = "http://localhost:8080/contact"
-        function cadastrarMensagem(event){
-            event.preventDefault();
-            let form = new FormData(event.target);
-            let request = {
-                name: form.get("nome"),
-                email: form.get("email"),
-                message: form.get("mensagem")
-            }
-            let options = {
-                method: "POST",
-                body: JSON.stringify(request),
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            }
-            fetch(contactAddUrl, options).then(res => res.json())
-            .then(res => {
-                console.log(res);
-            })
-        }
-    </script>
 </head>
 <body>
     <header class="main-menu">
@@ -59,7 +36,7 @@
             <div>
                 <h1>Fale Conosco:</h1>
                 <sub>Preencha o formulario abaixo para entrarmos em contato.</sub>
-                <form class="form" onsubmit="return cadastrarMensagem(event);">
+                <form class="form" onsubmit="return false;">
                     <label class="label" for="nome">Nome</label>
                     <input class="input" type="text" id="nome" name="nome" placeholder="Nome" pattern="[a-zA-ZáàâãéèêíïóôõöúçñÁÀÂÃÉÈÊÍÏÓÔÕÖÚÇÑ ]{1,30}" required>
                     <label class="label" for="email">E-mail</label>
@@ -83,5 +60,9 @@
         </ul>
         <span>Tec Toy S.A CNPJ: 22.770.366/0008-59, Rua Fernando de Albuquerque, 155 - 6o. Andar CEP: 01309-030 - São Paulo - SP Telefone: (11) 3018-8080</span>
     </footer>
+    <script type="module">
+        import { cadastrarMensagem } from './js/contact.js'
+        document.getElementsByClassName("form")[0].addEventListener("submit", (event) => cadastrarMensagem(event))
+    </script>
 </body>
 </html>

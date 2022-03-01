@@ -4,7 +4,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 550px;
+    height: clamp(250px, 100vh, 700px);
     overflow: hidden;
 }
 .form-container{
@@ -22,6 +22,11 @@ main{
     height: 100%;
     object-fit: contain;
     transform: rotateY(180deg);
+}
+#form-response{
+    height: 45px;
+    top: 445px;
+    width: 100%;
 }
 .form{
     margin-top: 10px;
