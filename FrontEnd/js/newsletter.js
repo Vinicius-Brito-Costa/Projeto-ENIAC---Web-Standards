@@ -20,6 +20,6 @@ export default async function cadastrarEmail(event){
             topStart: "0px",
             topEnd: "35px"
         }
-        await formResponsePopUp(res);
+        formResponsePopUp(res);
     }));
 }
