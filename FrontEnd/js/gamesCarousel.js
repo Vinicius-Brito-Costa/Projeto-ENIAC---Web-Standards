@@ -1,17 +1,19 @@
 import images from "./../config/images.js";
 let imgs = []
+const imgCount = 10
+const px = "px";
 
 function loadImages() {
     let min = 0
     let max = images.imgs.length - 1
     
-    for (let i = 0; i < 10; i++){
+    for (let i = 0; i < imgCount; i++){
         let img = document.createElement("img");
         let imgName = images.imgs[randomNumber(min, max)]
         img.src = "images/covers/" + imgName
         img.alt = imgName
         let container = document.getElementById("games-container")
-        img.style.left = (i * 350) + "px"
+        img.style.left = (i * 350) + px
         imgs = [...imgs, img]
         container.appendChild(img)
     }
@@ -21,32 +23,21 @@ function randomNumber(min, max){
     return Math.floor(Math.random() * (max - min)) + min
 }
 
-function isOutOfScreen(element){
-    let rect = element.getBoundingClientRect();
-    return rect.left <= -rect.width
-}
 export function carousel(speed) {
 
     loadImages();
-    
-    let intervalo = 0
+
+    let intervalo = 1000
     let container = document.getElementById("games-container")
-    container.style.height = imgs[0].getBoundingClientRect().height + "px"
+
+    container.style.height = imgs[0].getBoundingClientRect().height + px;
     setInterval(() => {
-        if(intervalo == 0 ){
-            intervalo = 60000 * speed
-        }
         imgs.forEach(img => {
-            if(isOutOfScreen(img)){
-                let current = img.getBoundingClientRect()
-                img.style.transition = ""
-                img.style.left = (current.width * (imgs.length - 2)) + "px"
-                container.insertBefore(img, imgs[imgs.length -1])
+            if (img.style.left.replace(px, "") <= -350) {
+                img.style.left = ((imgCount - 1) * 350) + px;
+                container.insertBefore(img, imgs[imgCount - 1])
             }
-            let rect = img.getBoundingClientRect()
-            let transX = rect.left - (rect.width * (imgs.length - 2))
-            img.style.transition = "all " + (intervalo / 1000) + "s linear"
-            img.style.left = transX + "px"
-        });
-    }, intervalo);
+            img.style.left = (img.style.left.replace(px, "") - 1) + px;
+        })
+    }, intervalo / speed)
 }

@@ -24,7 +24,6 @@
 }
 .games img{
     position: absolute;
-    transition: all 10s linear;
     width: 350px;
     height: 507px;
 }
